@@ -1,0 +1,13 @@
+<h1>LONGEST WORD GAME</h1>
+
+<ul>
+  <% @letters.each do |letter| %>
+    <li class="display-flex"><%= letter %></li>
+  <% end %>
+</ul>
+
+<form action="/score" method="post">
+  <input type="text" name="response" placeholder="Enter a word">
+  <input type="submit" value="Submit">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>
